@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+@mixin mq($breakpoint: 768px, $rule: max, $subtraction: false) {
+    @if $rule == max and $subtraction {
+        $breakpoint: $breakpoint - 0.0625;
+    }
+    @media screen and (#{$rule}-width: $breakpoint) {
+        @content;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$font-noto: "Noto Serif", serif;
+$font-mon: "Montserrat", sans-serif;
+$font-philosopher: "Philosopher", sans-serif;
+$font-tino: "Tinos", serif;
+$font-bar: "Barlow", sans-serif;
+$font-roboto: "Roboto", sans-serif;
+$font-open: "Open Sans", sans-serif;
+$font-trirong: "Trirong", serif;
+
+html {
+    font-size: min(10px, 2.42vw);
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.6rem;
+    scroll-behavior: smooth;
+    line-height: 1.6;	
+    // letter-spacing: 0.0002em;
+    // overflow-x: hidden;
+}
+img,
+embed,
+object,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+a, button{
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.85;
+    }
+}
+
+@media (min-width: 769px) {
+    .sp {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .pc {
+        display: none !important;
+    }
+}

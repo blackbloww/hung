@@ -1,0 +1,72 @@
+.container {
+    width: 94%;
+    margin: 0 auto;
+}
+
+.noto {
+    font-family: $font-noto;
+}
+
+.mon {
+    font-family: $font-mon;
+}
+
+.philo {
+    font-family: $font-philosopher;
+}
+
+.tino {
+    font-family: $font-tino;
+}
+
+.barlow {
+    font-family: $font-bar;
+}
+
+.roboto {
+    font-family: $font-roboto;
+}
+
+.opens {
+    font-family: $font-open;
+}
+
+.trirong {
+    font-family: $font-trirong;
+}
+
+.btn-submit {
+    font-family: $font-mon;
+    width: 18rem;
+    height: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-text-stroke: 0px rgba(255, 212, 82, 1);
+    border-color: rgba(229, 231, 235, 1);
+    border-radius: 15px;
+    border-style: solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 1);
+    font-weight: bold;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(247, 185, 0, 1) 100%);
+}
+
+.btn-order {
+    border-color: #E5E7EB;
+    border-radius: 6px;
+    border-style: solid;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(180deg, rgba(255, 2, 2, 1) 0%, rgba(112, 3, 3, 1) 100%);
+    --type: 0;
+    width: 18rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-mon;
+}

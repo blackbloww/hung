@@ -1,0 +1,42 @@
+header {
+    max-width: 42rem;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(247, 241, 224, 1.000);
+
+    .thumb-slider {
+        margin-top: 1rem;
+
+        .swiper-slide {
+            width: 19.4rem;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 3rem;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .thumb-slider {
+
+        .swiper-button-next:after,
+        .swiper-rtl .swiper-button-prev:after,
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 2rem;
+            padding: 3px;
+            border-radius: 3px;
+        }
+    }
+}
