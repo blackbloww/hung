@@ -21,6 +21,9 @@ $font-roboto: "Roboto", sans-serif;
 $font-open: "Open Sans", sans-serif;
 $font-trirong: "Trirong", serif;
 
+:target {
+  scroll-margin-top: 25rem;
+}
 html {
     font-size: min(10px, 2.38vw);
     scroll-behavior: smooth;

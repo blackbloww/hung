@@ -470,6 +470,10 @@ template {
   display: none;
 }
 
+:target {
+  scroll-margin-top: 25rem;
+}
+
 html {
   font-size: min(10px, 2.38vw);
   scroll-behavior: smooth;
@@ -536,6 +540,7 @@ header .swiper-button-prev:after {
   background: rgba(255, 255, 255, 0.5);
   padding: 5px;
   border-radius: 5px;
+  font-weight: 900;
 }
 header .thumb-slider .swiper-button-next:after,
 header .thumb-slider .swiper-rtl .swiper-button-prev:after,
@@ -623,7 +628,7 @@ footer {
 }
 
 .container {
-  width: 94%;
+  width: 94% !important;
   margin: 0 auto;
 }
 
