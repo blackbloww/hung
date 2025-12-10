@@ -5,6 +5,10 @@
     box-sizing: inherit;
 }
 
+html {
+    font-size: min(10px, 2.38vw);
+    scroll-behavior: smooth;
+}
 label,
 button {
     cursor: pointer;
@@ -32,6 +36,7 @@ input[type="checkbox"] {
 body {
     box-sizing: border-box;
     margin: 0;
+    font-size: 1.4rem;
 }
 
 :root {

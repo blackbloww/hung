@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="body">
+    <main class="flex">
+        <aside class="vertical-sidebar">
+            <input type="checkbox" role="switch" id="checkbox-input" class="checkbox-input" checked />
+            <nav>
+                <div class="control">
+                    <div class="sidebar__toggle-container"> <label tabindex="0" for="checkbox-input"
+                            id="label-for-checkbox-input" class="nav__toggle"> <span class="toggle--icons"
+                                aria-hidden="true"> <svg width="24" height="24" viewBox="0 0 24 24"
+                                    class="toggle-svg-icon toggle--open">
+                                    <path
+                                        d="M3 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2zM2 12a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1M2 18a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1">
+                                    </path>
+                                </svg> <svg width="24" height="24" viewBox="0 0 24 24"
+                                    class="toggle-svg-icon toggle--close">
+                                    <path
+                                        d="M18.707 6.707a1 1 0 0 0-1.414-1.414L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12z">
+                                    </path>
+                                </svg> </span> </label> </div>
+                </div>
+                <section class="sidebar__wrapper">
+                    <ul class="sidebar__list list--primary">
+                        <!-- <li class="sidebar__item item--heading">
+                        <h2 class="sidebar__item--heading">general</h2>
+                    </li> -->
+                        <li class="sidebar__item">
+                            <a class="sidebar__link" href="#" data-tooltip="Inbox"> <span class="text">Inbox</span> </a>
+                        </li>
+                        <a class="sidebar__link" href="#" data-tooltip="Inbox"> <span class="text">Inbox</span> </a>
+                        </li>
+
+                    </ul>
+                </section>
+            </nav>
+        </aside>
+
+        <div class="max-w-[100rem] w-full mx-auto my-[2rem]">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white rounded-t-2xl shadow-lg p-6">
+                <div class="font-bold text-center text-[2rem]">NHẬP THÔNG TIN SẢN PHẨM</div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="bg-white rounded-b-2xl shadow-xl p-6">
+                <form id="productForm" class="space-y-8">
+                    <!-- Tên sản phẩm -->
+                    <div>
+                        <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                            <i class="fas fa-tag text-blue-500 mr-2"></i>Tên sản phẩm <span
+                                class="text-red-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <input type="text" id="product_name" name="product_name" maxlength="256" required
+                                class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                                placeholder="Nhập tên sản phẩm">
+                            <i class="fas fa-cube absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+
+                    </div>
+
+                    <!-- Thông số cơ bản - Row 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Giá -->
+                        <div>
+                            <label for="price" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-money-bill-wave text-green-500 mr-2"></i>Giá <span
+                                    class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" id="price" name="price" maxlength="64" required
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                                    placeholder="Ví dụ: 150.000đ">
+                                <i
+                                    class="fas fa-dollar-sign absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Chất liệu -->
+                        <div>
+                            <label for="material" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-layer-group text-amber-500 mr-2"></i>Chất liệu
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" id="material" name="material" maxlength="64"
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
+                                    placeholder="Ví dụ: Nhựa ABS">
+                                <i
+                                    class="fas fa-palette absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Trọng lượng -->
+                        <div>
+                            <label for="weight" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-weight text-purple-500 mr-2"></i>Trọng lượng
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" id="weight" name="weight" maxlength="64"
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
+                                    placeholder="Ví dụ: 500g">
+                                <i
+                                    class="fas fa-weight-hanging absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Kích thước -->
+                        <div>
+                            <label for="size" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-ruler-combined text-teal-500 mr-2"></i>Kích thước
+                                <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <input type="text" id="size" name="size" maxlength="64"
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-300"
+                                    placeholder="Ví dụ: 20x30x15cm">
+                                <i
+                                    class="fas fa-expand-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ghi chú -->
+                    <div>
+                        <label for="note" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                            <i class="fas fa-sticky-note text-red-500 mr-2"></i>Ghi chú
+                        </label>
+                        <textarea id="note" name="note" rows="5"
+                            class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300"
+                            placeholder="Nhập ghi chú về sản phẩm..."></textarea>
+
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 w-full h-[2px] !mt-12"></div>
+                    <!-- product-comment -->
+                    <div class=" space-y-8" id="comment-form">
+                        <span class="font-bold block text-[2rem] text-center">BÌNH LUẬN</span>
+
+                        <div>
+                            <button
+                                class="remove-form-btn px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
+                                <i class="fas fa-times"></i> Xóa Form
+                            </button>
+                            <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-tag text-blue-500 mr-2"></i>Ảnh đại diện
+                            </label>
+                            <div class="relative">
+                                <input type="file" id="product_name" name="product_name" maxlength="256" required
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                                    placeholder="Nhập tên sản phẩm">
+                                <i
+                                    class="fas fa-cube absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="flex-1">
+                                <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                    <i class="fas fa-tag text-blue-500 mr-2"></i>Tên người dùng<span
+                                        class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="text" id="product_name" name="product_name" maxlength="256" required
+                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                                        placeholder="Nhập tên sản phẩm">
+                                    <i
+                                        class="fas fa-cube absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                    <i class="fas fa-tag text-blue-500 mr-2"></i>Lượt thích
+                                </label>
+                                <div class="relative">
+                                    <input type="number" id="product_name" name="product_name" maxlength="256" required
+                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                                        placeholder="Nhập tên sản phẩm">
+                                    <i
+                                        class="fas fa-cube absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                    <i class="fas fa-tag text-blue-500 mr-2"></i>Thời gian bình luận
+                                </label>
+                                <div class="relative">
+                                    <input type="text" id="product_name" name="product_name" maxlength="256" required
+                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                                        placeholder="Nhập tên sản phẩm">
+                                    <i
+                                        class="fas fa-cube absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-tag text-blue-500 mr-2"></i>Bình luận
+                            </label>
+                            <textarea id="note" name="note" rows="5"
+                                class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-300"
+                                placeholder="Nhập ghi chú về sản phẩm..."></textarea>
+                        </div>
+                        <div>
+                            <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <i class="fas fa-tag text-blue-500 mr-2"></i>Ảnh sản phẩm<span
+                                    class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <input type="file" id="product_name" name="product_name" maxlength="256" required
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                                    placeholder="Nhập tên sản phẩm">
+                                <i
+                                    class="fas fa-cube absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="cloneFormBtn"
+                        class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition duration-300 flex items-center gap-2">
+                        <i class="fas fa-copy"></i> Clone Form
+                    </button>
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 w-full h-[2px] !mt-12"></div>
+                    <!-- Nút điều khiển -->
+                    <div class="flex flex-col sm:flex-row justify-center pb-2 border-gray-200 space-y-4 sm:space-y-0">
+                        <div class="flex space-x-4">
+                            <button type="submit"
+                                class="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center">
+                                <i class="fas fa-save mr-2"></i> Lưu sản phẩm
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Thông báo -->
+                    <div id="message" class="hidden p-4 rounded-xl text-center font-semibold"></div>
+                </form>
+            </div>
+
+
+        </div>
+
+        <script>
+            // Đặt ngày giờ hiện tại cho create_at
+            document.addEventListener('DOMContentLoaded', function () {
+
+                // Xử lý submit form
+                document.getElementById('productForm').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Lấy dữ liệu form
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData.entries());
+
+                    // Hiển thị thông báo
+                    const messageDiv = document.getElementById('message');
+                    messageDiv.className = 'p-4 rounded-xl text-center font-semibold bg-green-100 text-green-800';
+                    messageDiv.innerHTML = `
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Đã lưu sản phẩm thành công! 
+                    <span class="block text-sm font-normal mt-1">Tên sản phẩm: ${data.product_name}</span>
+                `;
+                    messageDiv.classList.remove('hidden');
+
+                    // Cuộn đến thông báo
+                    messageDiv.scrollIntoView({ behavior: 'smooth' });
+
+                });
+
+            });
+
+            // Clone form
+            function cloneForm() {
+                formCounter++;
+
+                // Lấy form gốc
+                const originalForm = document.getElementById('comment-form');
+                const clonedForm = originalForm.cloneNode(true);
+
+                // Cập nhật data attribute và số thứ tự
+                clonedForm.setAttribute('data-form-index', formCounter);
+                clonedForm.querySelector('.form-number').textContent = formCounter;
+
+                // Cập nhật tất cả ID và name để tránh trùng lặp
+                clonedForm.querySelectorAll('[id], [name], [for]').forEach(element => {
+                    if (element.id) element.id = element.id.replace(/_1$/, `_${formCounter}`);
+                    if (element.name) element.name = element.name.replace(/_1$/, `_${formCounter}`);
+                    if (element.htmlFor) element.htmlFor = element.htmlFor.replace(/_1$/, `_${formCounter}`);
+                });
+
+                // Reset giá trị form mới
+                clonedForm.querySelectorAll('input, textarea').forEach(input => {
+                    if (input.type !== 'button' && input.type !== 'submit') {
+                        input.value = '';
+
+                        // Thêm event listener cho textarea
+                        if (input.tagName === 'TEXTAREA') {
+                            input.addEventListener('input', function () {
+                                updateCharCount(this);
+                            });
+                        }
+
+                        // Thêm event listener cho các input khác
+                        if (input.type !== 'file') {
+                            input.addEventListener('input', function () {
+                                const formId = this.name.split('_')[1];
+                                updateFormCompletion(formId);
+                            });
+                        }
+                    }
+                });
+
+                // Đặt lại file inputs
+                clonedForm.querySelectorAll('input[type="file"]').forEach(input => {
+                    input.value = '';
+                });
+
+                // Đặt lại character count
+                clonedForm.querySelector('.text-blue-600').textContent = '0';
+
+                // Thêm form vào container
+                document.getElementById('formsContainer').appendChild(clonedForm);
+
+                // Thêm animation
+                clonedForm.style.opacity = '0';
+                clonedForm.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    clonedForm.style.transition = 'all 0.5s ease';
+                    clonedForm.style.opacity = '1';
+                    clonedForm.style.transform = 'translateY(0)';
+                }, 10);
+
+                // Cập nhật thống kê
+                updateStatistics();
+
+                // Hiển thị thông báo
+                showNotification(`Đã tạo form bình luận #${formCounter}`, 'success');
+            }
+
+            // Xóa form
+            function removeForm(button) {
+                const form = button.closest('#comment-form');
+                const formNumber = form.querySelector('.form-number').textContent;
+
+                // Hiệu ứng xóa
+                form.style.transform = 'translateX(-100%)';
+                form.style.opacity = '0';
+
+                setTimeout(() => {
+                    form.remove();
+                    updateStatistics();
+                    renumberForms();
+                    showNotification(`Đã xóa form #${formNumber}`, 'warning');
+                }, 300);
+            }
+
+
+            
+
+            // Hiển thị thông báo
+            function showNotification(message, type = 'info') {
+                // Tạo thông báo
+                const notification = document.createElement('div');
+                notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg text-white z-50 transform translate-x-full transition-transform duration-300`;
+
+                // Màu sắc theo loại thông báo
+                const colors = {
+                    'success': 'bg-green-500',
+                    'warning': 'bg-amber-500',
+                    'error': 'bg-red-500',
+                    'info': 'bg-blue-500'
+                };
+
+                notification.className += ` ${colors[type] || colors.info}`;
+                notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'} mr-3"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+                document.body.appendChild(notification);
+
+                // Hiệu ứng hiện
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 10);
+
+                // Tự động ẩn sau 3 giây
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 3000);
+            }
+
+            // Khởi tạo event listeners
+            document.addEventListener('DOMContentLoaded', function () {
+                // Nút clone form
+                document.getElementById('cloneFormBtn').addEventListener('click', cloneForm);
+
+                
+
+                // Xử lý click xóa form (delegation)
+                // document.getElementById('formsContainer').addEventListener('click', function (e) {
+                //     if (e.target.closest('.remove-form-btn')) {
+                //         removeForm(e.target.closest('.remove-form-btn'));
+                //     }
+                // });
+
+                // Event listener cho textarea đầu tiên
+                document.querySelector('textarea[name^="comment"]').addEventListener('input', function () {
+                    updateCharCount(this);
+                });
+
+                // Event listener cho các input
+                document.querySelectorAll('input:not([type="file"])').forEach(input => {
+                    input.addEventListener('input', function () {
+                        const formId = this.name.split('_')[1];
+                        updateFormCompletion(formId);
+                    });
+                });
+
+                // Event listener cho file inputs
+                document.querySelectorAll('input[type="file"]').forEach(input => {
+                    input.addEventListener('change', function () {
+                        const formId = this.name.split('_')[1];
+                        updateFormCompletion(formId);
+                    });
+                });
+
+                // Đặt thời gian mặc định cho datetime-local
+                const now = new Date();
+                const localDateTime = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+                document.querySelector('input[type="datetime-local"]').value = localDateTime;
+            });
+        </script>
+    </main>
+</body>
+
+</html>
