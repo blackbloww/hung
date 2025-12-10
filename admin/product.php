@@ -1,5 +1,6 @@
 <?php
     include __DIR__ . '/layouts/header.php';
+    
 ?>
 
     <main class="flex">
@@ -15,7 +16,7 @@
 
             <!-- Form -->
             <div class="bg-white rounded-b-2xl shadow-xl p-6 overflow-auto h-[80vh]">
-                <form id="productForm">
+                <form id="productForm" action="store_product.php" method="POST" enctype="multipart/form-data">
                     <!-- Product  -->
                     <div class="space-y-8">
                         <div>
@@ -118,55 +119,55 @@
                                     class="remove-form-btn px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
                                     Xóa
                                 </button>
-                                <label for="avata" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="comment_avata[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Ảnh đại diện
                                 </label>
-                                <input type="file" id="avata" name="avata" required
+                                <input type="file" id="comment_avata[]" name="comment_avata[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
                             </div>
 
                             <div class="flex gap-6">
                                 <div class="flex-1">
-                                    <label for="user_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                    <label for="comment_user_name[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                         Tên người dùng<span class="text-red-500">*</span>
                                     </label>
-                                    <input type="text" id="user_name" name="user_name" required
+                                    <input type="text" id="comment_user_name[]" name="comment_user_name[]" required
                                         class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                         placeholder="Nhập tên sản phẩm">
                                 </div>
                                 <div class="flex-1">
-                                    <label for="is_like" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                    <label for="comment_is_like[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                         Lượt thích
                                     </label>
-                                    <input type="number" id="is_like" name="is_like" required
+                                    <input type="number" id="comment_is_like[]" name="comment_is_like[]" required
                                         class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                         placeholder="Nhập tên sản phẩm">
                                 </div>
                                 <div class="flex-1">
-                                    <label for="last_date" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                    <label for="comment_last_date[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                         Thời gian bình luận
                                     </label>
-                                    <input type="text" id="last_date" name="last_date" required
+                                    <input type="text" id="comment_last_date[]" name="comment_last_date[]" required
                                         class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                         placeholder="Nhập tên sản phẩm">
                                 </div>
                             </div>
 
                             <div>
-                                <label for="comment_note" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="comment_note[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Bình luận
                                 </label>
-                                <textarea id="comment_note" name="comment_note" rows="5"
+                                <textarea id="comment_note[]" name="comment_note[]" rows="5"
                                     class="w-full p-4 border border-gray-300 rounded-xl focus:border-blue-200 transition-all duration-300"
                                     placeholder="Nhập ghi chú về sản phẩm..."></textarea>
                             </div>
 
                             <div>
-                                <label for="product_name" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="comment_product_image[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Ảnh sản phẩm<span class="text-red-500">*</span>
                                 </label>
-                                <input type="file" id="product_name" name="product_name" required
+                                <input type="file" id="comment_product_image[]" name="comment_product_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
                             </div>
@@ -191,28 +192,28 @@
                                     class="remove-content-form px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
                                     Xóa
                                 </button>
-                                <label for="avata" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="content_image" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Hình ảnh
                                 </label>
-                                <input type="file" id="avata" name="avata" required
+                                <input type="file" id="content_image" name="content_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
                             </div>
 
                             <div>
-                                <label for="comment_note" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="content_title" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Tiêu đề
                                 </label>
-                                <input type="text" id="user_name" name="user_name" required
+                                <input type="text" id="content_title" name="content_title[]" required
                                     class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên tiêu đề">
                             </div>
 
                             <div>
-                                <label for="comment_note" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="content_body" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Nội dung
                                 </label>
-                                <textarea id="comment_note" name="comment_note" rows="5"
+                                <textarea id="content_body" name="content_body[]" rows="5"
                                     class="w-full p-4 border border-gray-300 rounded-xl focus:border-blue-200 transition-all duration-300"
                                     placeholder="Nhập nội dung"></textarea>
                             </div>
@@ -236,10 +237,10 @@
                                     class="remove-slide-form px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
                                     Xóa
                                 </button>
-                                <label for="avata" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                <label for="slide_image" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Hình ảnh
                                 </label>
-                                <input type="file" id="avata" name="avata" required
+                                <input type="file" id="slide_image" name="slide_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
                             </div>

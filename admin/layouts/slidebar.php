@@ -14,7 +14,8 @@
                                     <path
                                         d="M18.707 6.707a1 1 0 0 0-1.414-1.414L12 10.586 6.707 5.293a1 1 0 0 0-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414L12 13.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 12z">
                                     </path>
-                                </svg> </span> </label> </div>
+                                </svg> </span> </label> 
+                        </div>
                 </div>
                 <section class="sidebar__wrapper">
                     <ul class="sidebar__list list--primary">
@@ -31,6 +32,9 @@
                     <ul class="sidebar__list list--primary">
                         <li class="sidebar__item item--heading">
                             <h2 class="sidebar__item--heading">Sản phẩm</h2>
+                        </li>
+                        <li class="sidebar__item">
+                            <a class="sidebar__link" href="/admin/list_product.php" data-tooltip="Thêm sản phẩm"> <span class="text">Danh sách sản phẩm</span> </a>
                         </li>
                         <li class="sidebar__item">
                             <a class="sidebar__link" href="/admin/product.php" data-tooltip="Thêm sản phẩm"> <span class="text">Thêm sản phẩm</span> </a>
