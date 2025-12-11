@@ -24,7 +24,7 @@
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Trọng lượng</td>
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Kích thước</td>
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Ghi chú</td>
-                        <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Hành động</td>
+                        <td class="!border border-gray-300 px-4 py-2 text-center font-bold"></td>
                     </tr>
 
                     <?php
@@ -37,23 +37,23 @@
                         <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
                             <?= htmlspecialchars($row['create_at']) ?>
                         </td>
-                        <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem] text-blue-500 hover:underline">
-                           <a  href="update_product.php?id=<?= $row['id'] ?>"> <?= htmlspecialchars($row['product_name']) ?></a>
+                        <td class="!border border-gray-300 px-2 py-2 text-center text-[1.5rem] text-blue-500 hover:underline">
+                           <a  href="edit_product.php?id=<?= $row['id'] ?>"> <?= htmlspecialchars($row['product_name']) ?></a>
                         </td>
 
-                        <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
+                        <td class="!border border-gray-300 px-2 py-2 text-right text-[1.5rem]">
                             <?= htmlspecialchars($row['price']) ?>
                         </td>
 
-                        <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
+                        <td class="!border border-gray-300 px-2 py-2 text-right text-[1.5rem]">
                             <?= htmlspecialchars($row['material']) ?>
                         </td>
 
-                        <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
+                        <td class="!border border-gray-300 px-2 py-2 text-right text-[1.5rem]">
                             <?= htmlspecialchars($row['weight']) ?>
                         </td>
 
-                        <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
+                        <td class="!border border-gray-300 px-2 py-2 text-right text-[1.5rem]">
                             <?= htmlspecialchars($row['size']) ?>
                         </td>
 

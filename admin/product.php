@@ -114,7 +114,7 @@
                     <!-- Comment -->
                     <div id="comment-form">
                         <div class="bg-gray-100 p-8 rounded-xl space-y-8 mt-8">
-                            <div>
+                            <div class="form-group">
                                 <button type="button"
                                     class="remove-form-btn px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
                                     Xóa
@@ -125,6 +125,7 @@
                                 <input type="file" id="comment_avata[]" name="comment_avata[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
+                                <img class="preview mt-3 w-[10rem] h-[10rem] object-cover rounded-lg hidden" />
                             </div>
 
                             <div class="flex gap-6">
@@ -163,13 +164,14 @@
                                     placeholder="Nhập ghi chú về sản phẩm..."></textarea>
                             </div>
 
-                            <div>
+                            <div class="form-group">
                                 <label for="comment_product_image[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
                                     Ảnh sản phẩm<span class="text-red-500">*</span>
                                 </label>
                                 <input type="file" id="comment_product_image[]" name="comment_product_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
+                                <img class="preview mt-3 w-[10rem] h-[10rem] object-cover rounded-lg hidden" />
                             </div>
                         </div>
                     </div>
@@ -187,7 +189,7 @@
                     <!-- Content-->
                     <div id="content-form">
                         <div class="bg-gray-100 p-8 rounded-xl space-y-8 mt-8">
-                            <div>
+                            <div class="form-group">
                                 <button type="button"
                                     class="remove-content-form px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
                                     Xóa
@@ -198,6 +200,7 @@
                                 <input type="file" id="content_image" name="content_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
+                                <img class="preview mt-3 w-[10rem] h-[10rem] object-cover rounded-lg hidden" />
                             </div>
 
                             <div>
@@ -232,7 +235,7 @@
                     <!-- Slide-->
                     <div id="slide-form">
                         <div class="bg-gray-100 p-8 rounded-xl space-y-8 mt-8">
-                            <div>
+                            <div class="form-group"> 
                                 <button type="button"
                                     class="remove-slide-form px-4 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg transition duration-300 flex items-center gap-2 ml-auto">
                                     Xóa
@@ -243,6 +246,7 @@
                                 <input type="file" id="slide_image" name="slide_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
                                     placeholder="Nhập tên sản phẩm">
+                                <img class="preview mt-3 w-[10rem] h-[10rem] object-cover rounded-lg hidden" />
                             </div>
                         </div>
                     </div>
@@ -279,9 +283,9 @@
                         removeBtn.addEventListener("click", function () {
                             const totalForms = container.querySelectorAll("." + baseId + "-item").length;
 
-                            if (totalForms > 1) {
+                            // if (totalForms > 1) {
                                 form.remove();
-                            }
+                            // }
                         });
                     }
 
@@ -298,11 +302,19 @@
                         const inputs = clone.querySelectorAll("input, textarea");
                         inputs.forEach(el => (el.value = ""));
 
+                        // Reset tất cả preview ảnh
+                        const previews = clone.querySelectorAll(".preview");
+                        previews.forEach(img => {
+                            img.src = "";
+                            img.classList.add("hidden");
+                        });
+
                         attachRemoveEvent(clone);
 
                         // Chèn vào trước nút thêm
                         container.insertBefore(clone, cloneBtn);
                     });
+
                 }
 
                 // Gọi cho form bình luận
@@ -314,6 +326,21 @@
                 // Gọi cho form slide
                 setupCloneSystem("slide-form", "cloneSlideForm", "remove-slide-form");
 
+            });
+        </script>
+
+        <script>
+            document.addEventListener("change", function (e) {
+                if (e.target.matches('input[type="file"]')) {
+
+                    const fileInput = e.target;
+                    const preview = fileInput.closest(".form-group").querySelector(".preview");
+
+                    if (fileInput.files && fileInput.files[0]) {
+                        preview.src = URL.createObjectURL(fileInput.files[0]);
+                        preview.classList.remove("hidden");
+                    }
+                }
             });
         </script>
     </main>
