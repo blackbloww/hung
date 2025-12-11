@@ -70,3 +70,12 @@
     align-items: center;
     font-family: $font-mon;
 }
+
+@media(max-width: 421px){
+    .ic-contact{
+        max-width: fit-content !important;
+        padding-right: 0 !important;
+        transform: none !important;
+        right: 3.5rem !important;
+    }
+}

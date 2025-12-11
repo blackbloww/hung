@@ -555,8 +555,14 @@ footer {
   max-width: 42rem;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 12rem;
 }
 
+@media (max-width: 421px) {
+  footer {
+    padding-bottom: 5rem;
+  }
+}
 .main {
   background: rgb(247, 241, 224);
   max-width: 42rem;
@@ -698,4 +704,14 @@ footer {
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 421px) {
+  .ic-contact {
+    max-width: -moz-fit-content !important;
+    max-width: fit-content !important;
+    padding-right: 0 !important;
+    transform: none !important;
+    right: 3.5rem !important;
+  }
 }/*# sourceMappingURL=style.css.map */

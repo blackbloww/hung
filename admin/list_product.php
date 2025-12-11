@@ -23,7 +23,8 @@
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Chất liệu</td>
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Trọng lượng</td>
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Kích thước</td>
-                        <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Ghi chú</td>
+                        <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Nơi để phù hợp</td>
+                        <td class="!border border-gray-300 px-4 py-2 text-center font-bold">Liên kết trang</td>
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold"></td>
                     </tr>
 
@@ -34,9 +35,11 @@
                     ?>
                     <tr class="hover:bg-gray-200 bg-white">
                         <td class="!border border-gray-300 px-2 py-2 text-center text-[1.5rem]"><?= $stt++ ?></td>
+
                         <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
                             <?= htmlspecialchars($row['create_at']) ?>
                         </td>
+
                         <td class="!border border-gray-300 px-2 py-2 text-center text-[1.5rem] text-blue-500 hover:underline">
                            <a  href="edit_product.php?id=<?= $row['id'] ?>"> <?= htmlspecialchars($row['product_name']) ?></a>
                         </td>
@@ -59,6 +62,10 @@
 
                         <td class="!border border-gray-300 px-2 py-2 text-left text-[1.5rem]">
                             <?= nl2br(htmlspecialchars($row['note'])) ?>
+                        </td>
+
+                        <td class="!border border-gray-300 px-2 py-2 text-center text-[1.5rem] text-blue-500 hover:underline">
+                           <a href="/<?= $row['id'] ?>"><?php echo "https://{$_SERVER['HTTP_HOST']}/" . $row['id']?></a>
                         </td>
 
                         <td class="!border border-gray-300 px-2 py-2 text-center">
