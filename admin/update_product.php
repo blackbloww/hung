@@ -29,12 +29,13 @@ if ($product_id <= 0) die("Không có PRODUCT ID");
 /* ----------------------------------------
    NHẬN DỮ LIỆU PRODUCT
 ---------------------------------------- */
-$product_name = $_POST['product_name'] ?? '';
-$price        = $_POST['price'] ?? '';
-$material     = $_POST['material'] ?? '';
-$weight       = $_POST['weight'] ?? '';
-$size         = $_POST['size'] ?? '';
-$note         = $_POST['note'] ?? '';
+$product_name   = $_POST['product_name'] ?? '';
+$purchase_price = $_POST['purchase_price'] ?? '';
+$price          = $_POST['price'] ?? '';
+$material       = $_POST['material'] ?? '';
+$weight         = $_POST['weight'] ?? '';
+$size           = $_POST['size'] ?? '';
+$note           = $_POST['note'] ?? '';
 
 if (!$product_name || !$price || !$material || !$weight || !$size) {
     die("Thiếu dữ liệu product!");
@@ -49,12 +50,13 @@ try {
 ---------------------------------------- */
 $stmt = $conn->prepare("
     UPDATE dtb_product SET 
-        product_name=?, price=?, material=?, weight=?, size=?, note=?
+        product_name=?, purchase_price=?,price=?, material=?, weight=?, size=?, note=?
     WHERE id=?
 ");
 
-$stmt->bind_param("ssssssi", 
+$stmt->bind_param("sssssssi", 
     $product_name,
+    $purchase_price,
     $price,
     $material,
     $weight,
@@ -234,7 +236,7 @@ $conn->commit();
 
 echo "<script>
     alert('Cập nhật sản phẩm thành công!');
-    window.location.href='product.php';
+    window.location.href='list_product.php';
 </script>";
 exit;
 

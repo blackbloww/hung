@@ -88,21 +88,26 @@ include __DIR__ . '/layouts/header.php';
                         </div>
 
                     </div>
+                    
+                    <div>
+                        <label for="purchase_price" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                            Giá gốc
+                        </label>
+                        <input type="text" id="purchase_price" name="purchase_price" value="<?php echo $product['purchase_price'] ?>" required 
+                            class="bg-white w-full max-w-[29.5rem] px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
+                            placeholder="Nhập giá gốc">
+                    </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <!-- Giá -->
                         <div>
                             <label for="price" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
-                                <i class="fas fa-money-bill-wave text-green-500 mr-2"></i>Giá <span
+                                Giá bán<span
                                     class="text-red-500">*</span>
                             </label>
-                            <div class="relative">
-                                <input type="text" id="price" name="price" maxlength="64" required
-                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-                                    placeholder="Ví dụ: 150.000đ" value="<?php echo $product['price'] ?>">
-                                <i
-                                    class="fas fa-dollar-sign absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                            </div>
+                            <input type="text" id="price" name="price" maxlength="64" required
+                                class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                                placeholder="Ví dụ: 150.000đ" value="<?php echo $product['price'] ?>">
                         </div>
 
                         <!-- Chất liệu -->

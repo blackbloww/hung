@@ -1,7 +1,7 @@
 <?php
     include __DIR__ . "/admin/config.php";
 
-    $id = $_GET['id'] ?? null;
+    $id = $_GET['id'] ?? 1;
 
     if ($id && is_numeric($id)) {
         //lấy product
@@ -311,7 +311,7 @@
                         <p class="text-[1.5rem] font-bold">GIÁ TRI ÂN<br><span
                                 class="block text-[rgba(251,1,1,1)] font-bold text-[2.5rem] leading-none"><?php echo $product['price']?></span>
                         </p>
-                        <p class="line-through text-[1.7rem]">1.250.000 VNĐ</p>
+                        <p class="line-through text-[1.7rem]"><?php echo $product['purchase_price']?></p>
                     </div>
                 </div>
 
@@ -319,22 +319,22 @@
                     <p class="text-[1.9rem] philo font-bold leading-[1.3]">Chất Liệu : <?php echo $product['material']?></p>
                 </div>
 
-                <form action="" id="form">
-                    <p class="text-[rgba(251,1,1,1)] text-[2rem] font-bold text-center !mt-10 block">ĐẶT MUA NGAY HÔM
-                        NAY</p>
+                <form action="/admin/store_customer.php" method="POST" id="form">
+                    <p class="text-[rgba(251,1,1,1)] text-[2rem] font-bold text-center !mt-10 block">ĐẶT MUA NGAY HÔM NAY</p>
 
                     <div class="container flex flex-col gap-3 !mt-7 pb-8">
+                        <input type="hidden" name="product_id" value="<?php echo $product['id']?>">
                         <div class="flex gap-3">
-                            <input type="text" placeholder="Họ và Tên"
+                            <input type="text" placeholder="Họ và Tên" name="customer_name"
                                 class="!rounded-lg placeholder-gray-500 !border border-gray-300 !bg-white text-xl !px-3 !py-1 w-[19rem]">
-                            <input type="number" placeholder="Số Điện Thoại"
+                            <input type="number" placeholder="Số Điện Thoại" name="tel" require
                                 class="!rounded-lg placeholder-gray-500 !border border-gray-300 !bg-white text-xl !px-3 !py-1 flex-1 w-[14rem]">
                         </div>
-                        <input type="text" placeholder="Địa chỉ (ghi rõ số nhà)"
+                        <input type="text" placeholder="Địa chỉ (ghi rõ số nhà)" name="address"
                             class="!rounded-lg placeholder-gray-500 !border border-gray-300 !bg-white text-xl !px-3 !py-1 w-full">
                     </div>
 
-                    <button class="btn-order !mx-auto">
+                    <button class="btn-order !mx-auto" type="submit">
                         ĐẶT HÀNG
                     </button>
                 </form>

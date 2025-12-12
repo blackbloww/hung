@@ -1,3 +1,10 @@
+    <?php
+        include __DIR__ . "/../config.php";
+
+        $sql = "SELECT * FROM dtb_product WHERE delete_at IS NULL ORDER BY id DESC";
+        $result = $conn->query($sql);
+    ?>  
+
         <aside class="vertical-sidebar">
             <input type="checkbox" role="switch" id="checkbox-input" class="checkbox-input" checked />
             <nav>
@@ -22,9 +29,19 @@
                         <li class="sidebar__item item--heading">
                             <h2 class="sidebar__item--heading">Dữ liệu</h2>
                         </li>
-                        <li class="sidebar__item">
-                            <a class="sidebar__link" href="/admin" data-tooltip="Đĩa phúc hoa mẫu đơn"> <span class="text">Đĩa phúc hoa mẫu đơn</span> </a>
-                        </li>
+                        <?php
+                            $stt = 1;
+                            if ($result && $result->num_rows > 0):
+                                while ($row = $result->fetch_assoc()):
+                        ?>
+                            <li class="sidebar__item">
+                                <a class="sidebar__link" href="/../admin/orders/<?= htmlspecialchars($row['id']) ?>" data-tooltip="<?= htmlspecialchars($row['product_name']) ?>"> <span class="text"><?= htmlspecialchars($row['product_name']) ?></span> </a>
+                            </li>
+
+                        <?php endwhile; else: ?>
+                            <p class="text-center py-4 text-xl text-gray-500">Không có sản phẩm</p>
+                        <?php endif; ?>
+                        
                         <!-- <li class="sidebar__item">
                             <a class="sidebar__link" href="#" data-tooltip="Inbox"> <span class="text">Inbox</span> </a>
                         </li> -->

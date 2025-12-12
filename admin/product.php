@@ -33,20 +33,26 @@
 
                         </div>
 
+                        <div>
+                            <label for="purchase_price" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
+                                Giá gốc
+                            </label>
+                            <input type="text" id="purchase_price" name="purchase_price" required
+                                class="bg-white w-full max-w-[29.5rem] px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
+                                placeholder="Nhập giá gốc">
+                        </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <!-- Giá -->
                             <div>
                                 <label for="price" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
-                                    <i class="fas fa-money-bill-wave text-green-500 mr-2"></i>Giá <span
+                                    Giá bán<span
                                         class="text-red-500">*</span>
                                 </label>
-                                <div class="relative">
-                                    <input type="text" id="price" name="price" maxlength="64" required
-                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-                                        placeholder="Ví dụ: 150.000đ">
-                                    <i
-                                        class="fas fa-dollar-sign absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                                </div>
+                                <input type="text" id="price" name="price" maxlength="64" required
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition-all duration-300"
+                                    placeholder="Ví dụ: 150.000đ">
+                                    
                             </div>
 
                             <!-- Chất liệu -->
@@ -55,13 +61,9 @@
                                     <i class="fas fa-layer-group text-amber-500 mr-2"></i>Chất liệu
                                     <span class="text-red-500">*</span>
                                 </label>
-                                <div class="relative">
-                                    <input type="text" id="material" name="material" maxlength="64"
-                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
-                                        placeholder="Ví dụ: Sa Thạch - Vân Gỗ Vẽ Tay">
-                                    <i
-                                        class="fas fa-palette absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                                </div>
+                                <input type="text" id="material" name="material" maxlength="64"
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
+                                    placeholder="Ví dụ: Sa Thạch - Vân Gỗ Vẽ Tay">
                             </div>
 
                             <!-- Trọng lượng -->
@@ -70,13 +72,9 @@
                                     <i class="fas fa-weight text-purple-500 mr-2"></i>Trọng lượng
                                     <span class="text-red-500">*</span>
                                 </label>
-                                <div class="relative">
-                                    <input type="text" id="weight" name="weight" maxlength="64"
-                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
-                                        placeholder="Ví dụ: 3kg">
-                                    <i
-                                        class="fas fa-weight-hanging absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                                </div>
+                                <input type="text" id="weight" name="weight" maxlength="64"
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-all duration-300"
+                                    placeholder="Ví dụ: 3kg">
                             </div>
 
                             <!-- Kích thước -->
@@ -85,13 +83,9 @@
                                     <i class="fas fa-ruler-combined text-teal-500 mr-2"></i>Kích thước
                                     <span class="text-red-500">*</span>
                                 </label>
-                                <div class="relative">
-                                    <input type="text" id="size" name="size" maxlength="64"
-                                        class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition-all duration-300"
-                                        placeholder="Ví dụ: 38 x 23 x 12 (cm)">
-                                    <i
-                                        class="fas fa-expand-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                                </div>
+                                <input type="text" id="size" name="size" maxlength="64"
+                                    class="w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition-all duration-300"
+                                    placeholder="Ví dụ: 38 x 23 x 12 (cm)">
                             </div>
                         </div>
 
@@ -120,7 +114,7 @@
                                     Xóa
                                 </button>
                                 <label for="comment_avata[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
-                                    Ảnh đại diện
+                                    Ảnh đại diện<span class="text-red-500">*</span>
                                 </label>
                                 <input type="file" id="comment_avata[]" name="comment_avata[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
@@ -135,7 +129,7 @@
                                     </label>
                                     <input type="text" id="comment_user_name[]" name="comment_user_name[]" required
                                         class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
-                                        placeholder="Nhập tên sản phẩm">
+                                        placeholder="Nhập tên người dùng (ví dụ: Nguyễn Văn A)">
                                 </div>
                                 <div class="flex-1">
                                     <label for="comment_is_like[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
@@ -143,7 +137,7 @@
                                     </label>
                                     <input type="number" id="comment_is_like[]" name="comment_is_like[]" required
                                         class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
-                                        placeholder="Nhập tên sản phẩm">
+                                        placeholder="Nhập số lượt thích (ví dụ: 5)">
                                 </div>
                                 <div class="flex-1">
                                     <label for="comment_last_date[]" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
@@ -151,7 +145,7 @@
                                     </label>
                                     <input type="text" id="comment_last_date[]" name="comment_last_date[]" required
                                         class="bg-white w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
-                                        placeholder="Nhập tên sản phẩm">
+                                        placeholder="Nhập thời gian bình luận (ví dụ: 1 ngày trước)">
                                 </div>
                             </div>
 
@@ -161,7 +155,7 @@
                                 </label>
                                 <textarea id="comment_note[]" name="comment_note[]" rows="5"
                                     class="w-full p-4 border border-gray-300 rounded-xl focus:border-blue-200 transition-all duration-300"
-                                    placeholder="Nhập ghi chú về sản phẩm..."></textarea>
+                                    placeholder="Nhập bình luận..."></textarea>
                             </div>
 
                             <div class="form-group">
@@ -195,7 +189,7 @@
                                     Xóa
                                 </button>
                                 <label for="content_image" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
-                                    Hình ảnh
+                                    Hình ảnh<span class="text-red-500">*</span>
                                 </label>
                                 <input type="file" id="content_image" name="content_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"
@@ -241,7 +235,7 @@
                                     Xóa
                                 </button>
                                 <label for="slide_image" class="block text-gray-700 font-semibold mb-1 text-[1.4rem]">
-                                    Hình ảnh
+                                    Hình ảnh<span class="text-red-500">*</span>
                                 </label>
                                 <input type="file" id="slide_image" name="slide_image[]" required
                                     class="bg-white max-w-[29.5rem] w-full px-4 py-3 text-[1.4rem] border border-gray-300 rounded-lg focus:ring-blue-300 focus:border-blue-500 transition-all duration-300"

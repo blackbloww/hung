@@ -40,16 +40,17 @@ function upload_file(array $fileElement, string $destDir = 'uploads'): ?string {
 // =============================
 // NHẬN DỮ LIỆU PRODUCT
 // =============================
-$product_name = $_POST['product_name'] ?? '';
-$price        = $_POST['price'] ?? '';
-$material     = $_POST['material'] ?? '';
-$weight       = $_POST['weight'] ?? '';
-$size         = $_POST['size'] ?? '';
-$note         = $_POST['note'] ?? '';
-$create_at    = date("Y-m-d H:i:s");
+$product_name   = $_POST['product_name'] ?? '';
+$purchase_price = $_POST['purchase_price'] ?? '';
+$price          = $_POST['price'] ?? '';
+$material       = $_POST['material'] ?? '';
+$weight         = $_POST['weight'] ?? '';
+$size           = $_POST['size'] ?? '';
+$note           = $_POST['note'] ?? '';
+$create_at      = date("Y-m-d H:i:s");
 
 if ($product_name === "" || $price === "" || $material === "" || $weight === "" || $size === "") {
-    die("Vui lòng nhập đầy đủ thông tin!");
+    die("Vui lòng nhập đầy đủ thông tin sản phẩm!");
 }
 
 // Chuẩn hóa giá
@@ -62,12 +63,13 @@ try {
 // =============================
 // LƯU PRODUCT
 // =============================
-$sql = "INSERT INTO dtb_product (product_name, price, material, weight, size, note, create_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO dtb_product (product_name, purchase_price, price, material, weight, size, note, create_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssssss",
+$stmt->bind_param("ssssssss",
     $product_name,
+    $purchase_price,
     $price,
     $material,
     $weight,
