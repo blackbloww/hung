@@ -161,8 +161,8 @@
 
         <section class="sec-banner mt-8">
             <div class="container">
-                <p class="noto !text-[2.8rem] font-bold text-center"><?php echo $product['product_name'] ?></p>
-                <p class="philo !text-[2.8rem] font-bold text-center leading-snug !mt-2">Chất Liệu : <?php echo $product['material']?></p>
+                <p class="noto !text-[2.8rem] font-bold text-center whitespace-pre-line"><?php echo $product['product_name'] ?></p>
+                <p class="philo !text-[2.8rem] font-bold text-center leading-snug !mt-2 whitespace-pre-line">Chất Liệu : <?php echo $product['material']?></p>
                 <div class="flex items-center gap-8">
                     <img src="./assets/images/sale.webp" alt="" class="w-[16rem] h-[16rem] flash ">
                     <p class="text-[1.8rem] italic">Giá chỉ từ<br><span
@@ -178,8 +178,8 @@
         <?php if (!empty($contents)): ?>                       
             <section class="sec-introduce mt-8 pb-8">
                 <?php foreach ($firstHalf as $content): ?>
-                    <p class="text-[1.9rem] text-[#ffc107] italic text-center px-2 pt-6"><?php echo($content['title']) ?></p>
-                    <p class="text-[1.7rem] text-white philo text-center px-2 pb-5 leading-snug !mt-3"><?php echo($content['note']) ?></p>
+                    <p class="text-[1.9rem] text-[#ffc107] italic text-center px-2 pt-6 whitespace-pre-line"><?php echo($content['title']) ?></p>
+                    <p class="text-[1.7rem] text-white philo text-center px-2 pb-5 leading-snug !mt-3 whitespace-pre-line"><?php echo($content['note']) ?></p>
                     <div class="mt-2">
                         <img src="/admin/uploads/content/<?php echo($content['images']) ?>" alt="" class="">
                     </div>
@@ -192,7 +192,7 @@
                         TIN SẢN PHẨM</span>
                     <div class="flex items-center gap-4 mt-6">
                         <img src="./assets/images/icon.png" alt="" class="-mt-2">
-                        <p class="text-[1.8rem] leading-[1.2]"><span class="font-bold">Chất liệu:</span> <?php echo $product['material']?></p>
+                        <p class="text-[1.8rem] leading-[1.2] whitespace-pre-line"><span class="font-bold">Chất liệu:</span> <?php echo $product['material']?></p>
                     </div>
                     <div class="flex items-center gap-4 mt-2">
                         <img src="./assets/images/icon.png" alt="" class="-mt-2">
@@ -316,7 +316,7 @@
                 </div>
 
                 <div class="text-center mt-8 max-w-[21rem] ml-[13rem]">
-                    <p class="text-[1.9rem] philo font-bold leading-[1.3]">Chất Liệu : <?php echo $product['material']?></p>
+                    <p class="text-[1.9rem] philo font-bold leading-[1.3] whitespace-pre-line">Chất Liệu : <?php echo $product['material']?></p>
                 </div>
 
                 <form action="/admin/store_customer.php" method="POST" id="form">

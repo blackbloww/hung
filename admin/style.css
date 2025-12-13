@@ -186,6 +186,7 @@ figcaption {
 .sidebar__item {
     block-size: var(--item);
     border-radius: var(--brad-inner);
+    overflow: hidden;
 }
 
 .item--heading {
@@ -216,6 +217,7 @@ figcaption {
     outline: 2px solid transparent;
     border-radius: inherit;
     padding: 0 1rem;
+    white-space: nowrap;
 }
 
 .icon {
