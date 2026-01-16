@@ -4,7 +4,7 @@
     $id = $_GET['id'] ?? 1;
 
     if ($id && is_numeric($id)) {
-        $sql = "SELECT * FROM dtb_customer WHERE product_id = $id ORDER BY id";
+        $sql = "SELECT * FROM dtb_customer WHERE product_id = $id AND delete_at IS NULL ORDER BY id";
         $result = $conn->query($sql);
         if ($sql) {
             $result = $conn->query($sql);
