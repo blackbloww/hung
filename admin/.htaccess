@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "lp"
+AuthUserFile /home/xs191273/phongthuynamtinngoc.com/public_html/admin/.htpasswd
+Require valid-user
+
+<Files "store_customer.php">
+    Require all granted
+</Files>
+
+
+
