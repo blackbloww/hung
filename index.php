@@ -349,7 +349,7 @@
                 <div class="flex flex-col gap-2 items-center flex-1">
                     <img src="./assets/images/ic.png" alt="" class="w-[4.8rem] -ml-[5px]">
                     <p class="text-item barlow">BẢO HÀNH</p>
-                    <p class="barlow text-white text-[1.4rem] !-mt-2 text-center">Bảo hành trọn đời về màu sắc</p>
+                    <p class="barlow text-white text-[1.4rem] !-mt-2 text-center">Bảo hành 1 năm lỗi nhà sản xuất</p>
                 </div>
 
                 <div class="flex flex-col gap-2 items-center max-w-[15rem] w-full">
