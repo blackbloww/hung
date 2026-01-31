@@ -18,7 +18,7 @@
 
 
         <div class="flex-1 p-8 overflow-hidden bg-[#f9fafb]">
-            <div class="overflow-auto pb-2">
+            <div class="overflow-auto pb-2 h-[94vh]">
                 <table class="min-w-[130rem] w-full">
                     <tr class="bg-blue-100">
                         <td class="!border border-gray-300 px-4 py-2 text-center font-bold">STT</td>
